@@ -302,7 +302,8 @@ var d00,d01,d02,d10,d11,d12,d20,d21,d22,total;
  total=total+(d13*d22*d31)*-1 + (d23*d32*d11)*-1 + (d33*d12*d21)*-1;
  if(total!=0){
  
-
+    var det=$('#det');
+    var proc=$('#proc');
     t11=((d22*d33-d32*d23)/total).toFixed(2);                                                          
     t12=(((d12*d33-d32*d13)*-1)/total).toFixed(2);                          
     t13=((d12*d23-d22*d13)/total).toFixed(2);
@@ -348,6 +349,8 @@ var d00,d01,d02,d10,d11,d12,d20,d21,d22,total;
     document.getElementById('ad31').value=tr13;
     document.getElementById('ad32').value=tr23;
     document.getElementById('ad33').value=tr33;
+    det.html("det(c)="+total);
+    proc.html("det(c)=(("+d11+"*"+d22+"*"+d33+")+("+d21+"*"+d32+"*"+d13+")+("+d31+"*"+d12+"*"+d23+"))-(("+d13+"*"+d22+"*"+d31+")+("+d23+"*"+d32+"*"+d11+")+("+d33+"*"+d12+"*"+d21+"))");
   
      }else{
           alert("no existe inversa porque det(c)=0");
